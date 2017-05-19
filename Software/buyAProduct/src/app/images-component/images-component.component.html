@@ -1,0 +1,3 @@
+<tr *ngFor="let clickedproduct of forSelectedCategoryProdutsArray">
+  <div class = "templatemo_3_col"><img (click)="productDetailsToDatatable(clickedproduct)" src="assets/{{clickedproduct.id}}.jpg" height="100%" width="90%"/></div>
+</tr>

@@ -1,0 +1,9 @@
+<ng-select [allowClear]="true"
+           [items]="categoriesToSearchComponent"
+           [disabled]="disabled"
+           (data)="refreshValue($event)"
+           (selected)="selected($event)"
+           (removed)="removed($event)"
+           (typed)="typed($event)"
+           placeholder="No Product selected..........">
+</ng-select>

@@ -1,0 +1,36 @@
+
+<div id="templatemo_top_section">
+
+  <div class="templatemo_container">
+    <div id="templatemo_header">
+      <div id="templatemo_menu">
+      <!--<ul id="ulid">
+        <li>
+          <app-search-component>
+
+          </app-search-component>
+        </li>
+      </ul>-->
+      <app-search-component [categoriesToSearchComponent]='categoriesToSearchComponent' (gettingTheSelectedTypeFromSearch)="gettingTheSelectedTypeFromSearch($event)">
+
+      </app-search-component>
+      &emsp;
+    </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div id="templatemo_middle_section">
+
+  <div class="templatemo_container">
+    <div id="templatemo_content">
+      <app-images-component [forSelectedCategoryProdutsArray]="forSelectedCategoryProdutsArray" (getTheDatatableProductsArray)="getTheDatatableProductsArray($event)">
+
+      </app-images-component>
+      <div class="cleaner"></div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+/*#searchboxid{
+  background-color: #000101;
+}*/
+#searchboxid {
+  width: 60px;
+  height: 20px;
+  font-size: 11px;
+  border: none;
+  color: #424242;
+  /*background: url(/Software/Project/client/src/assets/Images/templatemo_subscribe.png) no-repeat;*/
+  background-position: 10px 9px;
+  margin: 0 0 0 0;
+  cursor: pointer;
+  text-decoration: underline;
+}

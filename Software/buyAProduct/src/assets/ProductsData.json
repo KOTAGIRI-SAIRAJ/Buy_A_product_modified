@@ -1,0 +1,10 @@
+[
+  {"id": "Iphone_5", "quantity":1, "category": "Apple_Products", "name": "Iphone_5", "price": 50000  },
+  {"id": "Iphone_5s", "quantity":1, "category": "Apple_Products", "name": "Iphone_5s", "price": 60000  },
+  {"id": "Iphone_6", "quantity":1, "category": "Apple_Products", "name": "Iphone_6", "price": 75000  },
+  {"id": "Iphone_headset", "quantity":1, "category": "Apple_Products", "name": "Iphone_headset", "price": 2000  },
+  {"id": "Mac_Tablet", "quantity":1, "category": "Apple_Products", "name": "MAc_Tablet", "price": 100000  },
+  {"id": "Lenovo_Z50", "quantity":1, "category": "Lenovo_Products", "name": "Lenovo_Z50", "price": 90000  },
+  {"id": "Lenovo_Z52", "quantity":1, "category": "Lenovo_Products", "name": "Lenovo_Z52", "price": 60000  },
+  {"id": "Lenovo", "quantity":1, "category": "Lenovo_Products", "name": "Lenovo", "price": 70000  }
+]
