@@ -4,13 +4,6 @@
   <div class="templatemo_container">
     <div id="templatemo_header">
       <div id="templatemo_menu">
-      <!--<ul id="ulid">
-        <li>
-          <app-search-component>
-
-          </app-search-component>
-        </li>
-      </ul>-->
       <app-search-component [categoriesToSearchComponent]='categoriesToSearchComponent' (gettingTheSelectedTypeFromSearch)="gettingTheSelectedTypeFromSearch($event)">
 
       </app-search-component>
@@ -29,6 +22,18 @@
       <app-images-component [forSelectedCategoryProdutsArray]="forSelectedCategoryProdutsArray" (getTheDatatableProductsArray)="getTheDatatableProductsArray($event)">
 
       </app-images-component>
+      <div class="cleaner"></div>
+    </div>
+  </div>
+
+</div>
+
+<div id="templatemo_middle_section1">
+  <div class="templatemo_container1">
+    <div id="templatemo_content1" *ngIf="sendDatatableProductsArray > 0">
+      <app-data-table-component [sendDatatableProductsArray]="sendDatatableProductsArray">
+
+      </app-data-table-component>
       <div class="cleaner"></div>
     </div>
   </div>

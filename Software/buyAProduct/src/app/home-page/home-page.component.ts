@@ -30,8 +30,8 @@ export class HomePageComponent implements OnInit {
     }
     console.log(this.forSelectedCategoryProdutsArray);
   }
-  getTheDatatableProductsArray(DatatableProductsArray){
+  getTheDatatableProductsArray(sendDatatableProductsArray){
     console.log('from home-page component.ts method name is getTheDatatableProductsArray')
-    console.log(DatatableProductsArray);
+    console.log(sendDatatableProductsArray);
   }
 }
