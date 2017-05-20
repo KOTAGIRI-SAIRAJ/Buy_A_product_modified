@@ -1,5 +1,10 @@
 .templatemo_3_col {
   float: left;
-  width: 275px;
+  width: 100px;
   padding: 20px 0;
+}
+.imagesclass{
+  width: 250px;
+  height: 200px;
+
 }

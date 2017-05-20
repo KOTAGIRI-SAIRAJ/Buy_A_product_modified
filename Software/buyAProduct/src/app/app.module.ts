@@ -13,7 +13,6 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { ImagesComponentComponent } from './images-component/images-component.component';
-import { DataTableComponentComponent } from './data-table-component/data-table-component.component';
 import { DatatableComponent } from './datatable/datatable.component';
 import { BillComponent } from './bill/bill.component';
 import {productService} from "./app.productService";
@@ -26,7 +25,6 @@ import {productService} from "./app.productService";
     HomePageComponent,
     SearchComponentComponent,
     ImagesComponentComponent,
-    DataTableComponentComponent,
     DatatableComponent,
     BillComponent
   ],
