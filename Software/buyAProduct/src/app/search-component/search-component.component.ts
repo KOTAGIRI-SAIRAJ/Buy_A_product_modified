@@ -25,7 +25,6 @@ export class SearchComponentComponent implements OnInit {
     this.disabled = this._disabledV === '1';
   }
   public selected(value: any): void {
-    /*console.log(value);*/
     this.gettingTheSelectedTypeFromSearch.emit(value.id);
   }
   public removed(value: any): void {
