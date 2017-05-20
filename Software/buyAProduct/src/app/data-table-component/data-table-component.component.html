@@ -1,35 +1,30 @@
-<h1>Products Added to Cart in Table Format</h1>
-<table class="table table-striped" [mfData]="sendDatatableProductsArray" #mf="mfDataTable" [mfRowsOnPage]="5">
-  <thead>
-  <tr>
-    <th style="width: 25%">
-      <mfDefaultSorter by="Item_Name">Item Name</mfDefaultSorter>
-    </th>
-    <th style="width: 25%">
-      <mfDefaultSorter by="Quantity">Quantity</mfDefaultSorter>
-    </th>
-    <th style="width: 25%" type="number">
-      <mfDefaultSorter by="Amount">Amount</mfDefaultSorter>
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr bgcolor="#fffaf0" *ngFor="let item of sendDatatableProductsArray">
-
-    <td>{{item.id}}</td>
-    <td>{{(item.quantity*item.price)}}</td>
-  </tr>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td colspan="4">
-      <mfBootstrapPaginator [rowsOnPageSet]="[5]"></mfBootstrapPaginator>
-    </td>
-  </tr>
-  <tr bgcolor="#f0e68c">
-    <td></td>
-    <td>Total Amount</td>
-    <td>{{sendDatatableProductsArray}}</td>
-  </tr>
-  </tfoot>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
+        </tr>
+        </thead>
+        <tbody id="myTable">
+        <tr>
+          <td>1</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+          <td>Table cell</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

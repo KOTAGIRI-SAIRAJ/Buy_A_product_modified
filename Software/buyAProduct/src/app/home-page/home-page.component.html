@@ -9,33 +9,24 @@
       </app-search-component>
       &emsp;
     </div>
-
-
     </div>
   </div>
 </div>
 
 <div id="templatemo_middle_section">
-
   <div class="templatemo_container">
     <div id="templatemo_content">
-      <app-images-component [forSelectedCategoryProdutsArray]="forSelectedCategoryProdutsArray" (getTheDatatableProductsArray)="getTheDatatableProductsArray($event)">
+      <app-images-component [forSelectedCategoryProdutsArray]="forSelectedCategoryProdutsArray" (getTheClickedProduct)="getTheClickedProduct($event)">
 
       </app-images-component>
-      <div class="cleaner"></div>
     </div>
   </div>
-
 </div>
+<div *ngIf="ArrayContainsCLickedProductsWithoutDuplicates.length>0">
+  <app-datatable [ArrayContainsCLickedProductsWithoutDuplicates]="ArrayContainsCLickedProductsWithoutDuplicates" [FinalAmount]="FinalAmount">
 
-<div id="templatemo_middle_section1">
-  <div class="templatemo_container1">
-    <div id="templatemo_content1" *ngIf="sendDatatableProductsArray > 0">
-      <app-data-table-component [sendDatatableProductsArray]="sendDatatableProductsArray">
-
-      </app-data-table-component>
-      <div class="cleaner"></div>
-    </div>
-  </div>
-
+  </app-datatable>
+</div>
+<div *ngIf="ArrayContainsCLickedProductsWithoutDuplicates.length > 0">
+  <button type="button" class="btn btn-lg btn-info" (click)="goToBillingComponent()">Proceed For the Billing Process</button>
 </div>

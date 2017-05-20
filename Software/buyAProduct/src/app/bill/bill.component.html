@@ -1,0 +1,42 @@
+<h1>Purchased Products</h1>
+<table class="table table-striped" [mfData]="totdata" #mf="mfDataTable" [mfRowsOnPage]="5">
+  <thead>
+  <tr>
+    <th style="width: 25%">
+      <mfDefaultSorter by="Item_Name">Item Name</mfDefaultSorter>
+    </th>
+    <th style="width: 25%">
+      <mfDefaultSorter by="Quantity">Quantity</mfDefaultSorter>
+    </th>
+    <th style="width: 25%" type="number">
+      <mfDefaultSorter by="Amount">Amount</mfDefaultSorter>
+    </th>
+    <th style="width: 25%" type="number">
+      <mfDefaultSorter by="Date">Pruchased Date</mfDefaultSorter>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr bgcolor="#fffaf0" *ngFor="let item of totdata">
+    <td (loadeddata) = "fortotAmount(item)">{{item.id}}</td>
+    <td name='quantity'>
+      {{item.quantity}}
+    </td>
+    <td>{{(item.quantity*item.price)}}</td>
+    <td>{{date | date: fulldate }}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  <tr bgcolor="#f0e68c">
+    <td></td>
+    <td></td>
+    <td>Total Amount</td>
+    <td>{{totamount}}</td>
+  </tr>
+  </tfoot>
+</table>

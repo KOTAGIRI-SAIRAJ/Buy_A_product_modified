@@ -6,11 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./data-table-component.component.css'],
 
 })
-export class DataTableComponentComponent implements OnInit {
-  @Input() sendDatatableProductsArray: any;
-  constructor() {  }
+export class DataTableComponentComponent  {
 
-  ngOnInit() {
-  }
+  constructor() {  }
 
 }

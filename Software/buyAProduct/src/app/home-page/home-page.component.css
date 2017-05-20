@@ -190,6 +190,19 @@ h4 {
 /*background: url(/Software/Project/client/src/assets/Images/templatemo_buttom_bg.jpg) #000101 repeat-x top;*/
 /*}*/
 
+.button {
+  width: 60px;
+  height: 20px;
+  font-size: 11px;
+  border: none;
+  color: #424242;
+  /*background: url(/Software/Project/client/src/assets/Images/templatemo_subscribe.png) no-repeat;*/
+  background-position: 10px 9px;
+  margin: 0 0 0 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 #templatemo_content {
   width: 960px;
 }
