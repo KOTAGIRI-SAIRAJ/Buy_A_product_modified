@@ -12,6 +12,9 @@ export class DatatableComponent implements OnInit {
   @Input() FinalAmount: number;
   ngOnInit(){  }
   constructor(public _productService:productService) {  }
+
+  // Finding the Total Amount for The Purchased Items by the Customer
+
   forFindingTotalAmount(){
     this.FinalAmount = 0;
     for(let eachProd of this.ArrayContainsCLickedProductsWithoutDuplicates){

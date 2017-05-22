@@ -1,5 +1,5 @@
 <h1 id="h1tag">Purchased Products</h1>
-<table class="table table-striped" [mfData]="totdata" #mf="mfDataTable" [mfRowsOnPage]="5">
+<table class="table table-striped" [mfData]="purchasedProductsData" #mf="mfDataTable" [mfRowsOnPage]="5">
   <thead>
   <tr>
     <th style="width: 25%">
@@ -17,7 +17,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr bgcolor="#dda0dd" *ngFor="let item of totdata">
+  <tr bgcolor="#dda0dd" *ngFor="let item of purchasedProductsData">
     <td (loadeddata) = "fortotAmount(item)">{{item.id}}</td>
     <td name='quantity'>
       {{item.quantity}}
@@ -35,7 +35,7 @@
   <tr bgcolor="#f0e68c">
     <td>Total Amount</td>
     <td></td>
-    <td>{{totamount}}</td>
+    <td>{{purchasedProductsAmount}}</td>
     <td></td>
   </tr>
   </tfoot>

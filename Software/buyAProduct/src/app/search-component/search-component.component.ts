@@ -24,9 +24,13 @@ export class SearchComponentComponent implements OnInit {
     this._disabledV = value;
     this.disabled = this._disabledV === '1';
   }
+
+  // Get The Selected Product and returns the Product Id using Event Emitter
+
   public selected(value: any): void {
     this.gettingTheSelectedTypeFromSearch.emit(value.id);
   }
+
   public removed(value: any): void {
     console.log('Removed value is: ', value);
   }

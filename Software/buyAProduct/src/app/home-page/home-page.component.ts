@@ -10,23 +10,28 @@ import {Router} from '@angular/router';
 })
 
 export class HomePageComponent implements OnInit {
-  categoriesToSearchComponent = ['Apple_Products','Lenovo_Products','Iphone_5','Iphone_5s','Iphone_headset','Lenovo','Lenovo_Z50','Lenovo_Z52','Mac_Tablet'];
-  categoriesToSearchComponentt: Array<any>=[];
+  categoriesToSearchComponent = ['Apple','Lenovo','Watches','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Mac_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch'];
+  /*categoriesToSearchComponentt: Array<any>=[];*/
   forSelectedCategoryProdutsArray:Array<any> = [];
   ArrayContainsCLickedProductsWithoutDuplicates: Array<any> = [];
   public router: Router;
   public totJsonData:any;
   public FinalAmount: number = 0;
+
+  // Iniializing the service and Router, and Reading the total Products List from the JSON file.
+
   constructor(public _productService:productService,public route: Router) {
     this.router = route;
     this._productService.getProductsJsonData()
       .subscribe(totJsonData => this.totJsonData = totJsonData,
         error => alert(error),
       );
+    this.categoriesToSearchComponent = this.categoriesToSearchComponent.sort();
   }
-  ngOnInit() {
+  ngOnInit() {  }
 
-  }
+  // Get the Selected Product from the Auto-Complete Search Bar
+
   gettingTheSelectedTypeFromSearch(selectedCategory){
     this.forSelectedCategoryProdutsArray = [];
     for(let eachProductRecord of this.totJsonData){
@@ -34,8 +39,10 @@ export class HomePageComponent implements OnInit {
         this.forSelectedCategoryProdutsArray.push(eachProductRecord);
       }
     }
-
   }
+
+  // For the Selected Product, Getting those total Items into an Array without duplicates
+
   getTheClickedProduct(selectedProduct){
     let flag = 0;
     if(this.ArrayContainsCLickedProductsWithoutDuplicates.length === 0){
@@ -58,6 +65,9 @@ export class HomePageComponent implements OnInit {
     }
     this._productService.setTheTotalProductsData(this.ArrayContainsCLickedProductsWithoutDuplicates,this.FinalAmount);
   }
+
+  // Page Navigation to Billing Component
+
   goToBillingComponent(){
     this.router.navigate(['bill']);
   }

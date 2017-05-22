@@ -6,13 +6,20 @@ import { productService } from "../app.productService";
   templateUrl: './bill.component.html',
   styleUrls: ['./bill.component.css']
 })
+
+
+
 export class BillComponent implements OnInit {
-  public totdata:any;
-  public totamount:number;
+
+  public purchasedProductsData:any;
+  public purchasedProductsAmount:number;
   date = new Date();
+
+  // Getting the purchased Items into the List and Amount
+
   constructor(public _productService:productService) {
-    this.totdata = _productService.getTheTotalProductsData();
-    this.totamount  = _productService.getTheTotalAmount();
+    this.purchasedProductsData = _productService.getTheTotalProductsData();
+    this.purchasedProductsAmount  = _productService.getTheTotalAmount();
   }
   ngOnInit() {
   }
