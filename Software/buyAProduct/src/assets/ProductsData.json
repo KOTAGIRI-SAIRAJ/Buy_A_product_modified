@@ -10,5 +10,10 @@
   {"id": "Rolex-diamond-daytona-golden", "quantity":1, "category": "Watches", "name": "Rolex-diamond-daytona-golden", "price": 100000  },
   {"id": "Rolex-diamond-daytone-Black", "quantity":1, "category": "Watches", "name": "Rolex-diamond-daytone-Black", "price": 90000  },
   {"id": "Rolex-Watch", "quantity":1, "category": "Watches", "name": "Rolex-Watch", "price": 80000  },
-  {"id": "Rolex-watch", "quantity":1, "category": "Watches", "name": "Rolex-watch", "price": 70000  }
+  {"id": "Rolex-watch", "quantity":1, "category": "Watches", "name": "Rolex-watch", "price": 70000  },
+  {"id": "Samsung_SL1500", "quantity":1, "category": "Samsung", "name": "Samsung_SL1500", "price": 8000},
+  {"id": "samsung-galaxy-on-nxt-sm-g610", "quantity":1, "category": "Samsung", "name": "samsung-galaxy-on-nxt-sm-g610", "price": 16000},
+  {"id": "Samsung_SL15", "quantity":1, "category": "Samsung", "name": "Samsung_SL15", "price": 25000}
+
+
 ]

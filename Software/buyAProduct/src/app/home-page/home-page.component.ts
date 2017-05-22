@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 
 export class HomePageComponent implements OnInit {
-  categoriesToSearchComponent = ['Apple','Lenovo','Watches','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Mac_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch'];
+  categoriesToSearchComponent = ['Apple','Lenovo','Watches','Samsung','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Mac_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch','Samsung_SL1500','samsung-galaxy-on-nxt-sm-g610','Samsung_SL15'];
   /*categoriesToSearchComponentt: Array<any>=[];*/
   forSelectedCategoryProdutsArray:Array<any> = [];
   ArrayContainsCLickedProductsWithoutDuplicates: Array<any> = [];
