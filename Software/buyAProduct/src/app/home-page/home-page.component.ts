@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { productService } from "../app.productService";
 import {Router} from '@angular/router';
+import {Popup} from "ng2-opd-popup";
+/*import {Popup} from 'ng2-opd-popup';*/
 
 
 @Component({
@@ -10,24 +12,27 @@ import {Router} from '@angular/router';
 })
 
 export class HomePageComponent implements OnInit {
+  /*@ViewChild('Popupref') Popupref: Popup;*/
   categoriesToSearchComponent = ['Apple','Lenovo','Watches','Samsung','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Ipad_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch','Samsung_SL1500','samsung-galaxy-on-nxt-sm-g610','Samsung_SL15'];
   forSelectedCategoryProdutsArray:Array<any> = [];
   ArrayContainsCLickedProductsWithoutDuplicates: Array<any> = [];
   public router: Router;
   public totJsonData:any;
   public FinalAmount: number = 0;
-  public tempamount:number = 0;
+  public tempcounter:number = 0;
   // Intializing the service and Router, and Reading the total Products List from the JSON file.
-
-  constructor(public _productService:productService,public route: Router) {
+  constructor(public _productService:productService,public route: Router,private popup:Popup) {
     this.router = route;
     this._productService.getProductsJsonData()
       .subscribe(totJsonData => this.totJsonData = totJsonData,
         error => alert(error),
       );
     this.categoriesToSearchComponent = this.categoriesToSearchComponent.sort();
+    // /this.showSample();
   }
-  ngOnInit() {  }
+  ngOnInit() {
+      //this.showSample();
+  }
 
   // Get the Selected Product from the Auto-Complete Search Bar
 
@@ -73,7 +78,26 @@ export class HomePageComponent implements OnInit {
   }
 
   // Page Navigation to Billing Component
+
   goToBillingComponent(){
     this.router.navigate(['bill']);
   }
+
+/*
+  forpopup(){
+    if(this.tempcounter === 0){
+      this.showSample();
+      this.tempcounter = 1;
+    }
+
+  }
+  showSample(){
+
+    this.popup.options = {
+      cancleBtnClass: "btn btn-default",
+      confirmBtnClass: "btn btn-default",
+      color: "#4180ab",
+      header: "Register the User Name Here"}
+      this.popup.show();
+  }*/
 }

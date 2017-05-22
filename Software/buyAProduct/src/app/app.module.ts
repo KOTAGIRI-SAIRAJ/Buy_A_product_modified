@@ -16,6 +16,8 @@ import { ImagesComponentComponent } from './images-component/images-component.co
 import { DatatableComponent } from './datatable/datatable.component';
 import { BillComponent } from './bill/bill.component';
 import {productService} from "./app.productService";
+/*import {PopupModule} from "ng2-popups";*/
+import {PopupModule} from 'ng2-opd-popup';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {productService} from "./app.productService";
     ConfirmModule,
     routes,
     Ng2AutoCompleteModule,
-    SelectModule
+    SelectModule,
+    PopupModule.forRoot()
   ],
   providers: [productService],
   bootstrap: [AppComponent]
