@@ -3,7 +3,7 @@
   {"id": "Iphone_5s", "quantity":1, "category": "Apple", "name": "Iphone_5s", "price": 60000  },
   {"id": "Iphone_6", "quantity":1, "category": "Apple", "name": "Iphone_6", "price": 75000  },
   {"id": "Iphone_headset", "quantity":1, "category": "Apple", "name": "Iphone_headset", "price": 2000  },
-  {"id": "Mac_Tablet", "quantity":1, "category": "Apple", "name": "MAc_Tablet", "price": 100000  },
+  {"id": "Ipad_Tablet", "quantity":1, "category": "Apple", "name": "Ipad_Tablet", "price": 100000  },
   {"id": "Lenovo_Z50", "quantity":1, "category": "Lenovo", "name": "Lenovo_Z50", "price": 90000  },
   {"id": "Lenovo_Z52", "quantity":1, "category": "Lenovo", "name": "Lenovo_Z52", "price": 60000  },
   {"id": "Lenovo_J20", "quantity":1, "category": "Lenovo", "name": "Lenovo_J20", "price": 70000  },
@@ -14,6 +14,4 @@
   {"id": "Samsung_SL1500", "quantity":1, "category": "Samsung", "name": "Samsung_SL1500", "price": 8000},
   {"id": "samsung-galaxy-on-nxt-sm-g610", "quantity":1, "category": "Samsung", "name": "samsung-galaxy-on-nxt-sm-g610", "price": 16000},
   {"id": "Samsung_SL15", "quantity":1, "category": "Samsung", "name": "Samsung_SL15", "price": 25000}
-
-
 ]

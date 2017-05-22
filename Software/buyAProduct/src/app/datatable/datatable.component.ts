@@ -17,8 +17,10 @@ export class DatatableComponent implements OnInit {
 
   forFindingTotalAmount(){
     this.FinalAmount = 0;
+
     for(let eachProd of this.ArrayContainsCLickedProductsWithoutDuplicates){
-      this.FinalAmount  = this.FinalAmount + (eachProd.price * parseInt(eachProd.quantity));
+      eachProd.quantity = parseInt(eachProd.quantity)
+      this.FinalAmount  = this.FinalAmount + (eachProd.price * eachProd.quantity);
     }
     this._productService.setTheTotalProductsData(this.ArrayContainsCLickedProductsWithoutDuplicates,this.FinalAmount);
   }
