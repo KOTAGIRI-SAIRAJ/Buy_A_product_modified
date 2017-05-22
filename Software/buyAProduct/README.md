@@ -1,6 +1,7 @@
 # BuyAProduct
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+This project was generated with Angular CLI version 1.0.3.
+This is E-market Site, where a user can have a better online experience. 
 
 ## Development server
 
