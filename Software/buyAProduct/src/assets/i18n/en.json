@@ -1,0 +1,19 @@
+{
+  "title": "Buy A Product !",
+  "hometag": "home",
+  "starttag": "start here",
+  "ProductsTag": "Products",
+  "productstag": "Our Products",
+  "privacypolicy": "privacy policy",
+  "SBmailid": "user@semanticbits.com",
+  "Copyright": "Copyright",
+  "SBrights":"2017@SemanticBits.com",
+  "purchasedTag":"Purchased Products",
+  "itemName":"Item Name",
+  "ActualPrice":"Actual Price of the Product",
+  "quantity":"Quantity",
+  "TotalAmount":"Actual Price * Quantity",
+  "purchasedDate":"Date of Purchase",
+  "Total Amount":"Total Products Sum",
+  "toBilling":"Proceed For the Billing Process"
+}

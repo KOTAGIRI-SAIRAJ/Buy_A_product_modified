@@ -31,5 +31,5 @@
   </app-datatable>
 </div>
 <div *ngIf=" ArrayContainsCLickedProductsWithoutDuplicates.length > 0 ">
-  <button type="button" class="btn btn-lg btn-info" (click)="goToBillingComponent()">Proceed For the Billing Process</button>
+  <button type="button" class="btn btn-lg btn-info" (click)="goToBillingComponent()">{{ 'toBilling' | translate}}</button>
 </div>

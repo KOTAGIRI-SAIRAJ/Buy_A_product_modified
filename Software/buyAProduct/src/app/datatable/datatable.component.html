@@ -3,13 +3,13 @@
   <thead>
   <tr>
     <th style="width: 25%">
-      <mfDefaultSorter by="Item_Name">Item Name</mfDefaultSorter>
+      <mfDefaultSorter by="Item_Name">{{ 'itemName' | translate}}</mfDefaultSorter>
     </th>
     <th style="width: 25%">
-      <mfDefaultSorter by="Quantity">Quantity</mfDefaultSorter>
+      <mfDefaultSorter by="Quantity">{{ 'quantity' | translate}}</mfDefaultSorter>
     </th>
     <th style="width: 25%" type="number">
-      <mfDefaultSorter by="Amount">Amount</mfDefaultSorter>
+      <mfDefaultSorter by="Amount">{{ 'TotalAmount' | translate}}</mfDefaultSorter>
     </th>
   </tr>
   </thead>
@@ -36,7 +36,7 @@
   </tr>
   <tr bgcolor="#f0e68c">
     <td></td>
-    <td>Total Amount</td>
+    <td>{{ 'Total Amount' | translate }}</td>
     <td>{{FinalAmount}}</td>
   </tr>
   </tfoot>

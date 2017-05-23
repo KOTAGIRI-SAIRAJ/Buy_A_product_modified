@@ -1,4 +1,4 @@
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="free portfolio template, 3-column, darkblue color, free download, templatemo" />
   <meta name="description" content="Portfolio CSS Template, 3-column layout, darkblue color, download from TemplateMo.com" />
@@ -10,7 +10,7 @@
       <div id="templatemo_header">
 
         <div id="templatemo_logo_area">
-          <h1>{{title | uppercase }}</h1>
+          <h1>{{ 'title' | translate }}</h1>
         </div>
 
           <div class="cleaner"></div>
@@ -18,8 +18,8 @@
         <div id="templatemo_menu">
 
           <ul>
-            <li class="current">home<p>start here</p></li>
-            <li>Products<p>Our Products</p></li>
+            <li class="current">{{'hometag' | translate }}<p>{{ 'starttag' | translate}}</p></li>
+            <li>{{'ProductsTag' | translate}}<p>{{'productstag' | translate}}</p></li>
 
           </ul>
           &emsp;

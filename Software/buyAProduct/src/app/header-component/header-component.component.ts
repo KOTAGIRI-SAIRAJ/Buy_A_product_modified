@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-component',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-component.component.css']
 })
 export class HeaderComponentComponent implements OnInit {
-  title:string = 'Buy A Product !'
-  constructor() { }
-
-  ngOnInit() {
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
+
+  ngOnInit() {  }
 
 }
