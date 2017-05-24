@@ -68,7 +68,7 @@ export class HomePageComponent implements OnInit {
   }
 
 
-  // Reloads the page  if the Name is not given
+  // Reloads the page if the Name is not given
   Reloading = ():void =>{
     location.reload();
   }
@@ -136,7 +136,7 @@ export class HomePageComponent implements OnInit {
   };
 
   // Page Navigation to Billing Component
-  goToBillingComponent(){
+  goToBillingComponent = ():void =>{
     this.router.navigate(['bill']);
   }
 
