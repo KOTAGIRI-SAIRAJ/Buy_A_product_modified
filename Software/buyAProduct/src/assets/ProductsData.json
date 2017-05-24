@@ -8,7 +8,7 @@
   {"id": "Lenovo Z52", "quantity":1, "category": "Lenovo", "name": "Lenovo Z52", "price": 60000  },
   {"id": "Lenovo J20", "quantity":1, "category": "Lenovo", "name": "Lenovo J20", "price": 70000  },
   {"id": "Rolex diamond daytona golden", "quantity":1, "category": "Watches", "name": "Rolex diamond daytona golden", "price": 100000  },
-  {"id": "Rolex diamond daytone Black", "quantity":1, "category": "Watches", "name": "Rolex diamond daytone Black", "price": 90000  },
+  {"id": "Rolex diamond daytona Black", "quantity":1, "category": "Watches", "name": "Rolex diamond daytona Black", "price": 90000  },
   {"id": "Rolex Watch", "quantity":1, "category": "Watches", "name": "Rolex Watch", "price": 80000  },
   {"id": "Rolex watch", "quantity":1, "category": "Watches", "name": "Rolex watch", "price": 70000  },
   {"id": "Samsung SL1500", "quantity":1, "category": "Samsung", "name": "Samsung SL1500", "price": 8000},
