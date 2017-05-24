@@ -68,7 +68,7 @@ export class HomePageComponent implements OnInit {
   }
 
 
-  // Reloads the page if the Name is not given
+  // Reloads the page  if the Name is not given
   Reloading = ():void =>{
     location.reload();
   }
