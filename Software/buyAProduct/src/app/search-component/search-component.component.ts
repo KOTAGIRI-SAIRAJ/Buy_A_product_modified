@@ -14,8 +14,8 @@ export class SearchComponentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
+
   private get disabledV(): string {
     return this._disabledV;
   }
