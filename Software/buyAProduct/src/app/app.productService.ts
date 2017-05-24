@@ -12,28 +12,24 @@ export class  productService {
 
 
   // Get the all the Product Details from the JSON file
-
-  getProductsJsonData() {
+  getProductsJsonData = (): any => {
     return this._http.get('assets/ProductsData.json')
       .map(res => res.json());
   }
 
   // Getting and Setting the Product Details of the User
-
-  setTheTotalProductsData(gettingProductsData,amount){
+  setTheTotalProductsData = (gettingProductsData,amount) : any => {
     this.ProductsToBilling  = gettingProductsData;
     this.amount = amount;
   }
 
   // Returns the Product Details for the purchased Items
-
-  getTheTotalProductsData():any {
+  getTheTotalProductsData = (): any => {
     return this.ProductsToBilling;
   }
 
-  // Returns the Total Amount of the of the Purchased Items
-
-  getTheTotalAmount():number{
+  // Returns the Total Amount for the Purchased Items
+  getTheTotalAmount = (): number   => {
     return this.amount;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { productService } from "../app.productService";
 import {Router} from '@angular/router';
+import {forEach} from "@angular/router/src/utils/collection";
 /*import {Popup} from "ng2-opd-popup";*/
 /*import {Popup} from 'ng2-opd-popup';*/
 
@@ -13,38 +14,54 @@ import {Router} from '@angular/router';
 
 export class HomePageComponent implements OnInit {
   /*@ViewChild('Popupref') Popupref: Popup;*/
-  categoriesToSearchComponent = ['Apple','Lenovo','Watches','Samsung','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Ipad_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch','Samsung_SL1500','samsung-galaxy-on-nxt-sm-g610','Samsung_SL15'];
-  forSelectedCategoryProdutsArray:Array<any> = [];  ArrayContainsCLickedProductsWithoutDuplicates: Array<any> = [];
+  /*public categoriesToSearchComponent = ['Apple','Lenovo','Watches','Samsung','Iphone_5','Iphone_5s','Iphone_headset','Lenovo_J20','Lenovo_Z50','Lenovo_Z52','Ipad_Tablet','Rolex-diamond-daytona-golden','Rolex-diamond-daytone-Black','Rolex-Watch','Rolex-watch','Samsung_SL1500','samsung-galaxy-on-nxt-sm-g610','Samsung_SL15'];*/
+  forSelectedCategoryProdutsArray:Array<any> = [];
+  ArrayContainsCLickedProductsWithoutDuplicates: Array<any> = [];
+  public categoriesToSearchComponent:Array<any> = [];
   public router: Router;
   public totJsonData:any=[];
   public FinalAmount: number = 0;
-  public temp1:Array<any> = [];
-  public temp2:Array<any> = [];
-  // Intializing the service and Router, and Reading the total Products List from the JSON file.
+
+  // Intializing the service and Router.
   constructor(public _productService:productService,public route: Router) {
     this.router = route;
-    this.categoriesToSearchComponent = this.categoriesToSearchComponent.sort();
-    // this.showSample();
+
   }
 
+  // Reading the total Products List from the JSON file and calling a method to store the JSON data.
   ngOnInit() {
-    this._productService.getProductsJsonData()
-      .subscribe(totJsonData => this.totJsonData = totJsonData,
-        error => alert(error),
-        ()=>this.temp1.push(this.totJsonData)
-      );
-    /*this.funcall();*/
+    this._productService.getProductsJsonData().subscribe(totJsonData => {
+        this.totJsonData = totJsonData;
+        this.populateSearchData();
+      },error => {
+        alert(error)
+    });
   }
-  /*funcall(){
-    this.temp2 = this.temp1[0];
-    console.log(this.temp2);
-    console.log(this.temp2['0'].length);
-    console.log(this.temp2['0']);
-  }*/
-  // Get the Selected Product from the Auto-Complete Search Bar
 
-  gettingTheSelectedTypeFromSearch(selectedCategory){
-    console.log(this.totJsonData);
+  // Stores the Id and Category of the product into one single array without duplicates, and Sort them
+  populateSearchData = ():void => {
+    var categoriesToSearchComponentTemp:Array<any> = [];
+    console.log('from populateSearchData')
+    let flag;
+    this.totJsonData.forEach((eachRecord) => {
+      categoriesToSearchComponentTemp.push(eachRecord.id);
+      flag = 0;
+      categoriesToSearchComponentTemp.forEach((eachProdcutIdandCategory) => {
+          if(eachProdcutIdandCategory === eachRecord.category){
+            flag= 1;
+          }
+      });
+      if(flag === 0){
+        categoriesToSearchComponentTemp.push(eachRecord.category);
+      }
+    })
+    categoriesToSearchComponentTemp = categoriesToSearchComponentTemp.sort();
+    this.categoriesToSearchComponent = categoriesToSearchComponentTemp;
+  }
+
+
+  // Get the Selected Product from the Auto-Complete Search Bar
+  gettingTheSelectedTypeFromSearch = (selectedCategory):void => {
     this.forSelectedCategoryProdutsArray = [];
     for(let eachProductRecord of this.totJsonData){
       if(eachProductRecord.category === selectedCategory || eachProductRecord.id === selectedCategory){
@@ -53,9 +70,8 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  // For the Selected Product, Getting those total Items into an Array without duplicates
-
-  getTheClickedProduct(selectedProduct){
+  // For the Selected Product, Getting those total Product Items into an Array which are related with this selected product, without duplicates
+  getTheClickedProduct = (selectedProduct):void => {
     let flag = 0;
     if(this.ArrayContainsCLickedProductsWithoutDuplicates.length === 0){
       alert('Product added to Cart');
@@ -77,7 +93,7 @@ export class HomePageComponent implements OnInit {
         this.ArrayContainsCLickedProductsWithoutDuplicates.push(selectedProduct);
         this.FinalAmount =0;
         for(let eachProd of this.ArrayContainsCLickedProductsWithoutDuplicates){
-            this.FinalAmount = this.FinalAmount + (eachProd.quantity * eachProd.price);
+          this.FinalAmount = this.FinalAmount + (eachProd.quantity * eachProd.price);
 
         }
       }
@@ -86,26 +102,7 @@ export class HomePageComponent implements OnInit {
   }
 
   // Page Navigation to Billing Component
-
   goToBillingComponent(){
     this.router.navigate(['bill']);
   }
-
-/*
-  forpopup(){
-    if(this.tempcounter === 0){
-      this.showSample();
-      this.tempcounter = 1;
-    }
-
-  }
-  showSample(){
-
-    this.popup.options = {
-      cancleBtnClass: "btn btn-default",
-      confirmBtnClass: "btn btn-default",
-      color: "#4180ab",
-      header: "Register the User Name Here"}
-      this.popup.show();
-  }*/
 }

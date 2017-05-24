@@ -26,7 +26,6 @@ export class SearchComponentComponent implements OnInit {
   }
 
   // Get The Selected Product and returns the Product Id using Event Emitter
-
   public selected(value: any): void {
     this.gettingTheSelectedTypeFromSearch.emit(value.id);
   }

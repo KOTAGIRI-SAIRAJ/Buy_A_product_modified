@@ -16,8 +16,8 @@ export class BillComponent implements OnInit {
   public purchasedProductsAmount:number;
   date = new Date();
   public router: Router;
-  // Getting the purchased Items into the List and Amount
 
+  // Getting the purchased Items into the array and also the total amount into a variable
   constructor(public _productService:productService,public route: Router) {
     this.router = route;
     this.purchasedProductsData = _productService.getTheTotalProductsData();
@@ -27,7 +27,9 @@ export class BillComponent implements OnInit {
     }
   }
   ngOnInit() { }
-  NavigatetoHomepage(){
+
+  // Navigate to the Home Page
+  NavigatetoHomepage = () : void => {
     alert('Thank You For Shopping...!!!');
     this.router.navigate(['home-page']);
   }

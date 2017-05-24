@@ -14,10 +14,8 @@ export class DatatableComponent implements OnInit {
   constructor(public _productService:productService) {  }
 
   // Finding the Total Amount for The Purchased Items by the Customer
-
-  forFindingTotalAmount(){
+  forFindingTotalAmount = (): void => {
     this.FinalAmount = 0;
-
     for(let eachProd of this.ArrayContainsCLickedProductsWithoutDuplicates){
       eachProd.quantity = parseInt(eachProd.quantity)
       this.FinalAmount  = this.FinalAmount + (eachProd.price * eachProd.quantity);

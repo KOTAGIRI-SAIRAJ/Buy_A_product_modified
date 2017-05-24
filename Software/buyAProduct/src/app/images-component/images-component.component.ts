@@ -12,8 +12,7 @@ export class ImagesComponentComponent implements OnInit {
   ngOnInit() {  }
 
   // Returns the Clicked products to the DataTable using Event Emitter
-
-  productDetailsToDatatable(clickedproduct){
+  productDetailsToDatatable = (clickedproduct):void => {
    this.getTheClickedProduct.emit(clickedproduct);
   }
 }
