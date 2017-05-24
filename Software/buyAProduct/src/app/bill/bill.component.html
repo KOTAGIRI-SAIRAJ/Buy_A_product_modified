@@ -1,4 +1,4 @@
-<h1 id="h1tag">{{ 'purchasedTag' | translate }}</h1>
+<h1 id="h1tag">{{ 'purchasedTag' | translate }}{{Uname | uppercase }}</h1>
 <table class="table table-striped" [mfData]="purchasedProductsData" #mf="mfDataTable" [mfRowsOnPage]="5">
   <thead>
   <tr>
@@ -22,10 +22,10 @@
   <tbody>
   <tr bgcolor="#fffaf0" *ngFor="let item of purchasedProductsData">
     <td (loadeddata) = "fortotAmount(item)">{{item.id}}</td>
-    <td name='Actual_Price_of_Product'>{{item.price}}</td>
+    <td name='Actual_Price_of_Product'>{{item.price | number:'1.0-4'}}</td>
     <td name='quantity'>{{item.quantity}}</td>
-    <td>{{ ( item.quantity * item.price ) }}</td>
-    <td>{{date | date: fulldate }}</td>
+    <td>{{ ( item.quantity * item.price ) | number:'1.0-4' }}</td>
+    <td>{{date | date:'medium' }}</td>
   </tr>
   </tbody>
   <tfoot>

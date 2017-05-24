@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {Http, HttpModule} from '@angular/http';
+import { Http, HttpModule} from '@angular/http';
 import { routes } from './app.router';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { AppComponent } from './app.component';
@@ -16,16 +16,15 @@ import { ImagesComponentComponent } from './images-component/images-component.co
 import { DatatableComponent } from './datatable/datatable.component';
 import { BillComponent } from './bill/bill.component';
 import { productService } from "./app.productService";
-/*import { PopupModule } from 'ng2-opd-popup';*/
-import{ TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
-
-
+import { PopupModule } from 'ng2-opd-popup';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { CustomFormsModule } from 'ng2-validation'
 
 export function customLoader(http: Http) {
   return new TranslateHttpLoader(http, '/../assets/i18n/', '.json');
 }
-
 
 @NgModule({
   declarations: [
@@ -42,11 +41,13 @@ export function customLoader(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
+    CustomFormsModule,
     DataTableModule,
     ConfirmModule,
     routes,
     Ng2AutoCompleteModule,
     SelectModule,
+    PopupModule.forRoot(),
     TranslateModule.forRoot(
       {
         loader: {
@@ -55,11 +56,16 @@ export function customLoader(http: Http) {
           deps: [Http]
         }
       }),
+    LocalStorageModule.withConfig({
+      prefix: 'my-app',
+      storageType: 'localStorage'
+    })
 
   ],
   providers: [productService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 
 }

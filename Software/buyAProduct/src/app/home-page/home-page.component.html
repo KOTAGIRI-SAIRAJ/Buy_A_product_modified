@@ -1,3 +1,7 @@
+<div>
+
+
+</div>
 <div id="templatemo_top_section">
   <div class="templatemo_container">
     <div id="templatemo_header">
@@ -5,7 +9,6 @@
       <app-search-component [categoriesToSearchComponent]='categoriesToSearchComponent' (gettingTheSelectedTypeFromSearch)="gettingTheSelectedTypeFromSearch($event)">
 
       </app-search-component>
-      &emsp;
     </div>
     </div>
   </div>
@@ -17,6 +20,7 @@
       <app-images-component [forSelectedCategoryProdutsArray]="forSelectedCategoryProdutsArray" (getTheClickedProduct)="getTheClickedProduct($event)">
 
       </app-images-component>
+
     </div>
   </div>
 </div>
@@ -28,3 +32,17 @@
 <div *ngIf=" ArrayContainsCLickedProductsWithoutDuplicates.length > 0 ">
   <button type="button" class="btn btn-lg btn-info" (click)="goToBillingComponent()">{{ 'toBilling' | translate}}</button>
 </div>
+<popup #popup1 (confirmClick)="getUser()" (cancelClick)="Reloading()" >
+
+  <div class="form-group row" >
+    <!--<form [formGroup]="Myform">-->
+    <label class="col-md-4">User Name </label>
+    <input class="form-control col-md-4" type="text"  [(ngModel)]="name" name="name" placeholder="Enter your Name here.." >
+    <!--formControlName="Usname"-->
+      <!--<p *ngIf="form.controls.password.errors?.required">required error</p>-->
+    <!--</form>-->
+  </div>
+
+</popup>
+
+
